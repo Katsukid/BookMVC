@@ -1,0 +1,30 @@
+﻿@model BookMVC.Entities.User
+<div id="login-modal" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true" class="modal fade">
+     <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+               <div class="modal-header">
+                    <h5 class="modal-title">Customer login</h5>
+                    <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
+               </div>
+               <div class="modal-body">
+                    @using (Html.BeginForm("Login", "User", FormMethod.Post))
+                    {
+                         <div class="form-group">
+                              @Html.TextBoxFor(u => u.Email, new { @class = "form-control", placeholder = "email", id = "email-modal" })
+                              @*<input id="email-modal" type="text" placeholder="email" class="form-control">*@
+                         </div>
+                         <div class="form-group">
+                              @Html.PasswordFor(u => u.Password, new { @class = "form-control", placeholder = "password", id = "password-modal" })
+                              @*<input id="password-modal" type="password" placeholder="password" class="form-control">*@
+                         </div>
+                         <p class="text-center">
+                              <button class="btn btn-primary"><i class="fa fa-sign-in"></i> Log in</button>
+                         </p>
+                    }
+                    <p class="text-center text-muted">Not registered yet?</p>
+                    <p class="text-center text-muted">@Html.ActionLink("Register now!", "Register", "User", null, null) It is easy and done in 1 minute and gives you access to special discounts and much more!</p>
+               </div>
+          </div>
+     </div>
+</div>
+

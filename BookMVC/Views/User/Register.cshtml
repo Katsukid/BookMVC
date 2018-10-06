@@ -1,0 +1,95 @@
+﻿@model BookMVC.Entities.User
+@{
+     ViewBag.Title = "Register";
+     Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- navbar-->
+<div id="all">
+     <div id="content">
+          <div class="container">
+               <h4 class="textcenter text-info">Register</h4>
+               @using (Html.BeginForm("Register", "User", FormMethod.Post, new { @onsubmit="return checkall();"}))
+               {
+                    <div class="form-group">
+                         <div class="row pb-1">
+                              <div class="col-lg-6">
+                                   <div class="input-group">
+                                        <span class="btn btn-info noneradius-right"><i class="fa fa-user icon" aria-hidden="true"></i></span>
+                                        @*@Html.TextBoxFor(u => u.Name,new { @class = "form-control", onkeyup = "check('Name')", placeholder="Enter you name"})*@
+                                        <input type="text" onkeyup="check('Name')" class="form-control" name="Name" id="Name" placeholder="Enter your Name" />
+                                   </div>
+                                   <div class="text-danger o-0" id="er_Name">* Must enter here</div>
+                              </div>
+                              <div class="col-lg-6">
+                                   <div class="input-group">
+                                        <span class="btn btn-info noneradius-right"><i class="fa fa-envelope icon" aria-hidden="true"></i></span>
+                                        @*@Html.TextBoxFor(u => u.Email, new { @class="form-control", onkeyup = "check('Email')", placeholder="Enter your email"})*@
+                                        <input type="text" onkeyup="check('Email')" class="form-control" name="Email" id="Email" placeholder="Enter your Email" />
+                                   </div>
+                                   <div class="text-danger o-0" id="er_Email">* Must enter here</div>
+                              </div>
+                         </div>
+                         <div class="row pb-1">
+                              <div class="col-lg-6">
+                                   <div class="input-group">
+                                        <span class="btn btn-info noneradius-right"><i class="fa fa-home icon" aria-hidden="true"></i></span>
+                                        <input type="text" onkeyup="check('Address')" class="form-control" name="Address" id="Address" placeholder="Enter your address" value="" />
+                                   </div>
+                                   <div class="text-danger o-0" id="er_Address">* Must enter here</div>
+                              </div>
+                              <div class="col-lg-6">
+                                   <div class="input-group">
+                                        <span class="btn btn-info noneradius-right"><i class="fa fa-lock icon" aria-hidden="true"></i></span>
+                                        <input type="password" onkeyup="check('Password')" class="form-control" name="password" id="password" placeholder="Enter your Password" />
+                                   </div>
+                                   <div class="text-danger o-0" id="er_Password">* Must enter here</div>
+                              </div>
+                         </div>
+                         <div class="row pb-1">
+                              <div class="col-lg-6">
+                                   <div class="input-group">
+                                        <span class="btn btn-info noneradius-right"><i class="fa fa-phone icon" aria-hidden="true"></i></span>
+                                        <input type="tel" onkeyup="check('Phone')" class="form-control" name="Phone" id="Phone" placeholder="Enter your Phome number" />
+                                   </div>
+                                   <div class="text-danger o-0" id="er_Phone">* Must enter here</div>
+                              </div>
+                              <div class="col-lg-6">
+                                   <div class="input-group">
+                                        <span class="btn btn-info noneradius-right"><i class="fa fa-lock icon" aria-hidden="true"></i></span>
+                                        <input type="password" onkeyup="check('cpassword')" class="form-control" name="cpassword" id="cpassword" placeholder="Confirm your Password" />
+                                   </div>
+                                   <div class="text-danger o-0" id="er_cpassword">* Must enter here</div>
+                              </div>
+                         </div>
+                         <div class="row pb-1">
+                              <div class="col-lg-6">
+                                   <div class="input-group">
+                                        <span class="btn btn-info noneradius-right"><i class="fa fa-birthday-cake icon" aria-hidden="true"></i></span>
+                                        <input type="date" class="form-control" name="DayOfBirth" id="DayOfBirth" min="1900-01-01" max="2010-01-01" />
+                                   </div>
+                                   <div class="text-danger o-0" id="er_DayOfBirth">* Must fill in this field</div>
+                              </div>
+                              <div class="col-lg-6">
+                                   <input type="checkbox" />
+                                   <span> Nhận thông tin khuyến mãi qua Email cá nhân </span>
+                              </div>
+                         </div>
+                         <div class="row pb-1">
+                              <div class="col-lg-7">
+                              </div>
+                              <div class="col-lg-4">
+                                   <button type="submit" class="btn btn-info">Submit</button>
+                                   <button type="reset" class="btn btn-info">Reset</button>
+                                   <button type="button" class="btn btn-info"> Cancel</button>
+                              </div>
+                              <div class="col-lg-1">
+
+                              </div>
+                         </div>
+                    </div>
+               }
+          </div>
+     </div>
+</div>
+<script src="~/Assets/User/js/validationRegister.js"></script>

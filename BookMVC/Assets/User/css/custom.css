@@ -1,0 +1,39 @@
+/* your styles go here */
+
+
+/* Registrator */
+.registerbox {
+     height: 450px;
+     width: 800px;
+     border: solid 2px;
+}
+
+.noneradius-right {
+     border-bottom-right-radius: 0px;
+     border-top-right-radius: 0px;
+}
+
+.noneradius {
+     border-radius: 0px;
+}
+
+.term {
+     color: red;
+     text-decoration: underline
+}
+
+     .term:hover {
+          color: #17a2b8;
+          background-color: white;
+          cursor: pointer;
+     }
+
+.icon {
+     width: 16px;
+     height: 20px;
+}
+
+.o-0 {
+     opacity: 0;
+}
+/* End Register */ 

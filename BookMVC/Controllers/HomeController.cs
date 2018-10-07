@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
+using BookMVC.Entities;
+using BookMVC.Dao;
 namespace BookMVC.Controllers
 {
      public class HomeController : Controller
@@ -25,6 +26,8 @@ namespace BookMVC.Controllers
 
           public ActionResult TopNavBar()
           {
+               ViewBag.Category = new CategoryDao().ListAll();
+               ViewBag.BookCategory = new BookCatgoryDao().ListAll();
                return PartialView();
           }
      }
